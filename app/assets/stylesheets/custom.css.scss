@@ -27,11 +27,19 @@ $navbar-default-bg: #073B15;
 	height: 300px;
 }
 
-.jumbotron h1,h2 {
+.jumbotron h1 {
 	color: #fff;
 	margin-bottom: 30px;	
+}
+.jumbotron h2{
+	color: #fff;
+	margin-bottom: 30px;
 }
 
 .btn-xlarge {
 	background-color: #073B15;
+}
+.bs-footer {
+		background-color: #073B15;
+
 }
