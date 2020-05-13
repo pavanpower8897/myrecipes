@@ -9,10 +9,12 @@
 			<%= gravatar_for(chef,size: 80) %>
       <h4 ><%= link_to  chef.chefname.capitalize, chef_path(chef), class: "chef-title" %></h4>
       <h6><%= pluralize(chef.recipes.count, "recipe") if chef.recipes %>
+      	<h6><%= link_to "Delete this chef", chef_path(chef), method: :delete, data: {confirm: "Are you sure
+      		you want to delete chef and all associated recipes"} %> </h6>
  </div>
 </div>
 </div>
 <% end %>
 <div align="center">
 	<%= will_paginate %>
-</div>
+</div>	

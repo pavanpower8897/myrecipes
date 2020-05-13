@@ -16,7 +16,7 @@ class ChefsController < ApplicationController
 	end
 	def show
 		@chef = Chef.find(params[:id])
-		@recipes = @chef.recipes.paginate(page: params[:page], per_page: 2)
+		@recipes = @chef.recipes.paginate(page: params[:page], per_page: 5)
 	end
 
 	def edit
@@ -34,7 +34,13 @@ class ChefsController < ApplicationController
 	end
 
 	def index
-		@chefs = Chef.paginate(page: params[:page], per_page: 1)
+		@chefs = Chef.paginate(page: params[:page], per_page: 5)
+	end
+	def destroy
+		@chef = Chef.find(params[:id])
+		@chef.destroy
+		flash[:success] = "Chef and all associated recipes deleted successfully"
+		redirect_to chefs_path
 	end
 
 

@@ -77,4 +77,12 @@ class ChefTest < ActiveSupport::TestCase
     	assert_not @chef.save
     end
 
+    test "associated recipes should be deleted" do
+    	@chef.save
+    	@chef.recipes.create!(name: "chicken", description: "Add water and chicken to bowl")
+    	assert_difference 'Recipe.count', -1 do
+    		@chef.destroy
+    	end
+    end
+
 end
