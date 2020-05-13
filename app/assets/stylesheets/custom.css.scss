@@ -48,8 +48,10 @@ $navbar-default-bg: #073B15;
 	margin-top: 0;
 }
 
-.well a{
+.well {
+a {
 	color: #073B15;
+}
 }
 
 .chef-info{
@@ -71,5 +73,11 @@ $navbar-default-bg: #073B15;
 	a {
 	color: #fff; 
 	}
+}
+
+.chef-title {
+	font-size: 1.75em;
+	font-weight: bold;
+	color: #073B15
 }
 
