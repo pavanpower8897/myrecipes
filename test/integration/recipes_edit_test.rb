@@ -8,6 +8,7 @@ def setup
   	@rec1  = @chef.recipes.create!(name: "chicken", description: "With biryani")
 end
 test "succefully  update a valid recipe submission" do
+    sign_in_as(@chef, "password")
 	get edit_recipe_path(@rec1)
 	assert_template 'recipes/edit'
 	name_of_recipe = "Chicke salad"
@@ -22,6 +23,7 @@ test "succefully  update a valid recipe submission" do
    
 end
 test "reject an invalid recipe submission" do
+    sign_in_as(@chef, "password")
 	get edit_recipe_path(@rec1)
 	assert_template 'recipes/edit'
     patch recipe_path(@rec1), params: {recipe: {name: "",description: "" } }
