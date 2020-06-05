@@ -1,11 +1,11 @@
-require 'test_helper'
+     require 'test_helper'
 
 class ChefsEditTest < ActionDispatch::IntegrationTest
  def setup
  	@chef = Chef.create!(chefname: "pavan", email: "pavanpower@gmail.com",
         password: "password", password_confirmation: "password")
   	@rec1  = @chef.recipes.create!(name: "chicken", description: "With biryani")
-  	@admin_user = Chef.create(chefname: "kumar", email: "inti@gmail.com",
+  	@admin_user = Chef.create(chefname: "kumar", email: "inti@gmail.com",                                                          
   	 password: "password", password_confirmation:"password",admin: true)
   	@chef1 = Chef.create!(chefname: "nandhu", email: "nandhu@gmail.com",
         password: "password", password_confirmation: "password")
